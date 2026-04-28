@@ -69,9 +69,11 @@ public class Car {
     private User provider;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
     private List<Rental> rentals = new ArrayList<>();
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
     private List<Review> reviews = new ArrayList<>();
 
     // Helper methods
